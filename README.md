@@ -9,7 +9,7 @@ To view the feedreader website
 
 1. Download all the files
 2. Load index.html in your browser.
-3. You can also view the website on my [GitHub Page].
+3. You can also view the website [here](https://kt2187.github.io/project-4-feedreader/).
 
 ## Tests
 Open the index.html file in your browser and the tests will run automatically. The included tests are as follows:
