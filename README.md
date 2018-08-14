@@ -1,5 +1,16 @@
-# Udacity Front-End Nanodegree Feedreader
-## project-4
+# Udacity Front-End Nanodegree Feedreader Project 4
+
+## Table of Contents
+
+* [Project Overview](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#project-overview)
+* [Instructions](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#instructions)
+* [Tests](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#tests)
+* [Dependencies](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#dependencies)
+* [Browser Compatibilities](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#browser-compatibilities)
+* [Acknowledgments](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#acknowledgments)
+* [Resources I referred to](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#resources-i-referred-to)
+* [What I learned](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#what-i-learned)
+* [How this will help my career](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#how-will-this-help-my-career)
 
 ## Project Overview
 This project uses Jasmine to run a series of tests on a web-based application that reads RSS feeds.
