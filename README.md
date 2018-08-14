@@ -10,7 +10,7 @@
 * [Acknowledgments](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#acknowledgments)
 * [Resources I referred to](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#resources-i-referred-to)
 * [What I learned](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#what-i-learned)
-* [How this will help my career](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#how-will-this-help-my-career)
+* [How this will help my career](https://github.com/kt2187/project-4-feedreader/blob/master/README.md#how-this-help-my-career)
 
 ## Project Overview
 This project uses Jasmine to run a series of tests on a web-based application that reads RSS feeds.
