@@ -8,11 +8,14 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
+
 $(function() {
+    
     /* This is our first test suite - a test suite just contains
     * a related set of tests. This suite is all about the RSS
     * feeds definitions, the allFeeds variable in our application.
     */
+    
     describe("RSS Feeds", function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
@@ -21,11 +24,11 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
+        
         it("are defined", function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
-
 
         /* Write a test that loops through each feed
          * in the allFeeds object and ensure it has a URL defined
@@ -49,7 +52,6 @@ $(function() {
             }
         })
     });
-
 
     /* Write a new test suite named "The menu" */
 
@@ -111,7 +113,7 @@ $(function() {
     
     describe('New Feed Selection', function() {
         
-        /* TODO: Write a test that ensures when a new feed is loaded
+        /* Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
