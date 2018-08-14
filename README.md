@@ -55,7 +55,7 @@ This application has been tested in Chrome, Firefox, and Edge.
 
 ## Acknowledgments
 * Starter code was povided by Udacity.
-* Matthew Cranford (incredible student who took the time to create another tutorial with step by step instructions and screenshots).
+* Matthew Cranford - dedicated student who took the time to create another tutorial with step by step instructions and screenshots. You can check out his blog [here](https://matthewcranford.com/blog/).
 
 ## Resources I referred to:
 These resources and webinars were provided by Udacity mentors, coaches, student leaders, and students. This was my first experience writing test suites and I heavily relied on these resources. 
