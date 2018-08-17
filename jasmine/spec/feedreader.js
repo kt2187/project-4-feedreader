@@ -93,58 +93,38 @@ $(function() {
         });
     });
 //**************************************************************************************************************************************
-    /* A new test suite named "Initial Entries" */
-
-        describe("Initial Entries", function() {
-
-        /* A test that ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
-         */
-
-        beforeEach(function(done) {
-            loadFeed(0, done);
-        });
-
-         it("Completes Work", function() {
-            // Code before required change of using parent-child relationship to test if feed container has at least 1 child entry element inside it 
-            //const feedEntries = document.querySelector(".feed");
-
-            // after required change of using parent-child relationship to test if feed container has at least 1 child entry element inside it 
-            expect($(".feed .entry").length).toBeGreaterThan(0);
-        });
-    });
-//**************************************************************************************************************************************
-    /* A new test suite named "New Feed Selection" */
-    
+       // Test suite for loading new content after initial load
     describe('New Feed Selection', function() {
-        
+
         /* A test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
 
-        const feed = document.querySelector('.feed');
-        const firstFeed = [];
-        const secondFeed = [];
+        // Sorting feed's content into a new empty array
+        const testFeed = document.querySelector('.feed');
+        const feedContent = [];
 
+        // Load multiple feeds and compare content to ensure change
         beforeEach(function(done) {
-            loadFeed(0, function() {
-            Array.from(feed.children).forEach(function(feed) {
-                firstFeed.push(feed.innerText);
-                loadFeed(1, function() {
-                    Array.from(feed.children).forEach(function(feed) {
-                        secondFeed.push(feed.innerText);      
-            });
-            done();
+
+                // Load first feed
+                loadFeed(0);
+
+                // Store values of first feed
+                Array.from(testFeed.children).forEach(function(entry) {
+                        feedContent.push(entry.innerText);
+                });
+
+                // Load second feed
+                loadFeed(1, done);
         });
-    });
-});
-});
-        it("content changes", function() {
-                expect(firstFeed).not.toEqual(secondFeed);
+
+        // Compare first feed against new feed content
+        it('content changes', function() {
+                Array.from(testFeed.children).forEach(function(entry, index) {
+                        expect(entry.innerText !== feedContent[index]).toBe(true);
+                });
         });
-    });
+});
 }());
