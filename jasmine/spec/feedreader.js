@@ -72,7 +72,8 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 //**************************************************************************************************************************************
-         /* A test that ensures the menu changes
+         
+        /* A test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
@@ -93,8 +94,32 @@ $(function() {
         });
     });
 //**************************************************************************************************************************************
-       // Test suite for loading new content after initial load
-    describe('New Feed Selection', function() {
+    /* A new test suite named "Initial Entries" */
+    
+        describe("Initial Entries", function() {
+
+        /* A test that ensures when the loadFeed
+         * function is called and completes its work, there is at least
+         * a single .entry element within the .feed container.
+         * Remember, loadFeed() is asynchronous so this test will require
+         * the use of Jasmine's beforeEach and asynchronous done() function.
+         */
+
+        beforeEach(function(done) {
+            loadFeed(0, done); // Call the loadFeed function for the first index, having the id of 0.
+        });
+
+         it("Completes Work", function() {
+            // Code before required change of using parent-child relationship to test if feed container has at least 1 child entry element inside it 
+            //const feedEntries = document.querySelector(".feed");
+
+            // after required change of using parent-child relationship to test if feed container has at least 1 child entry element inside it 
+            expect($(".feed .entry").length).toBeGreaterThan(0);
+        });
+    });
+//**************************************************************************************************************************************
+        // Test suite for loading new content after initial load
+        describe("New Feed Selection", function() {
 
         /* A test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
@@ -102,29 +127,25 @@ $(function() {
          */
 
         // Sorting feed's content into a new empty array
-        const testFeed = document.querySelector('.feed');
-        const feedContent = [];
+        var prevFeed; // Variable to hold prevFeed
+        var newFeed; // Variable to hold newFeed
 
-        // Load multiple feeds and compare content to ensure change
         beforeEach(function(done) {
-
-                // Load first feed
-                loadFeed(0);
-
-                // Store values of first feed
-                Array.from(testFeed.children).forEach(function(entry) {
-                        feedContent.push(entry.innerText);
+            loadFeed(0, function() {
+                prevFeed = document.querySelector(".entry-link");
+                // Feed 0 done loading
+                loadFeed(1, function() {
+                    newFeed = document.querySelector(".entry-link");
+                    // feed 1 done loading
+                    // Begin tests
+                    done();
                 });
-
-                // Load second feed
-                loadFeed(1, done);
+            });
         });
-
         // Compare first feed against new feed content
-        it('content changes', function() {
-                Array.from(testFeed.children).forEach(function(entry, index) {
-                        expect(entry.innerText !== feedContent[index]).toBe(true);
-                });
+        it("content actually changes", function() {
+            // Test if content has changed
+            expect(prevFeed === newFeed).toBe(false);
         });
-});
+    });
 }());
